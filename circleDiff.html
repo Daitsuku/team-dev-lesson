@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circleDiff</title>
+</head>
+<body>
+    <p>Circle 1 radius: <input type="number" id="cir1"></p>
+    <p>Circle 2 radius: <input type="number" id="cir2"></p>
+    <p>Difference: </p>
+    <p id="circlediff"></p>
+
+    <script>
+        function circleDiff(cir1, cir2) {
+            return Math.abs(cir1 - cir2);
+        }
+        function getCircleDiff() {
+            var cir1 = document.getElementById("cir1").value;
+            var cir2 = document.getElementById("cir2").value;
+            var diff = circleDiff(cir1, cir2);
+            document.getElementById("circlediff").innerHTML = diff;
+        }
+        document.getElementById("cir1").addEventListener("input", getCircleDiff);
+        document.getElementById("cir2").addEventListener("input", getCircleDiff);
+    </script>
+</body>
+</html>
